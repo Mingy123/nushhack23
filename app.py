@@ -102,6 +102,7 @@ def add_lecture():
   if file.filename == '': abort(400)
   name, ext = split_filename(file.filename)
   filename = random_string(16) + '.' + ext
+  if ext == '': filename = filename[:-1]
   file.save('./static/lectures/'+filename)
   return 'success'
 
@@ -115,9 +116,11 @@ def nicetify():
   name, ext = split_filename(file.filename)
   fileID = random_string(16)
   path = './static/nicetify/' + fileID + '.' + ext
+  if ext == '': filename = filename[:-1]
   file.save(path)
   image = rendertext.read(path)
   path = './static/nicetify/' + fileID + '_out.' + ext
+  if ext == '': filename = filename[:-1]
   image.save(path)
   return path[1:]
 
