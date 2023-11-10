@@ -45,15 +45,22 @@ def render(video_path):
 
     dump = ' '.join(texts)
     client = OpenAI()
-    completion = client.chat.completions.create(
+    difficulty = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "you will be given a list of words, some of which are gibberish. output the scientific technical complexity of the image as a number from 0 to 100, from 1st grade to 12th grade. Respond with strictly only the number, no matter what."},
             {'role': 'user', 'content': dump}
         ]
     )
-    ans = completion.choices[0].message.content
+    tags = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "you will be given a list of words, some of which are gibberish. summarise this into a few words describing it's topic. Respond with strictly only these words, no matter what."},
+            {'role': 'user', 'content': dump}
+        ]
+    )
+    ans = difficulty.choices[0].message.content
     try:
-        return int(ans)
+        return int(ans), tags.choices[0].message.content
     except:
-        return 50
+        return 50, tags.choices[0].message.content
