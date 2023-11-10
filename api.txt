@@ -1,0 +1,52 @@
+List of lesson packages:
+packages = {
+  'testing': {
+    'title': 'doing math with friends',
+    'lessons': ['someID', 'someOtherID'],
+    'tags': ['math', 'calculus'],
+    'difficulty': 8
+  }
+}
+
+List of individual lessons:
+lessons = {
+  'someID': {
+    'title': 'math 1',
+    'package': 'testing',
+    'lecture': 'videoID',
+    'quiz': [{'question': 'What  is 1 + 1?', 'options': ['1', '2', '3', '4'], 'answer': '2'}]
+  },
+  'someOtherID': {
+    'title': 'math 2',
+    'package': 'testing',
+    'lecture': 'videoID',
+    'quiz': [{'question': 'What  is 2 + 1?', 'options': ['1', '2', '3', '4'], 'answer': '3'}]
+  }
+}
+
+GET /package
+params: id (lesson package id)
+returns: lesson package info (JSON)
+
+GET /lesson
+params: id
+returns: lesson info (JSON)
+
+POST /create-package
+returns: package ID
+
+POST /create-lesson
+params: id
+returns: lesson ID
+
+POST /add-quiz
+params: id (lesson), question, options ([str]), answer (str)
+returns: 'success'
+
+POST /add-lecture
+params: id (lesson), file (multipart)
+returns: 'success'
+
+POST /nicetify
+params: file (multipart)
+returns: url (e.g. /static/...)
