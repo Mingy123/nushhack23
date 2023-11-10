@@ -47,6 +47,10 @@ POST /add-lecture
 params: id (lesson), file (multipart)
 returns: 'success'
 
+POST /set-info
+params: id (lesson), difficulty (0-100), tags ([str])
+returns: 'success'
+
 POST /nicetify
 params: file (multipart)
 returns: url (e.g. /static/...)
