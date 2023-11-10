@@ -116,11 +116,11 @@ def nicetify():
   name, ext = split_filename(file.filename)
   fileID = random_string(16)
   path = './static/nicetify/' + fileID + '.' + ext
-  if ext == '': filename = filename[:-1]
+  if ext == '': path = path[:-1]
   file.save(path)
   image = rendertext.read(path)
   path = './static/nicetify/' + fileID + '_out.' + ext
-  if ext == '': filename = filename[:-1]
+  if ext == '': path = path[:-1]
   image.save(path)
   return path[1:]
 
