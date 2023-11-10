@@ -29,13 +29,13 @@ lessons = {
     'title': 'math 1',
     'package': 'testing',
     'lecture': 'videoID',
-    'quiz': [{'question': 'What  is 1 + 1?', 'options': ['1', '2', '3', '4'], 'answer': '2'}]
+    'quiz': [{'question': 'What  is 1 + 1?', 'options': ['1', '2', '3', '4'], 'answer': 1}]
   },
   'someOtherID': {
     'title': 'math 2',
     'package': 'testing',
     'lecture': 'videoID',
-    'quiz': [{'question': 'What  is 2 + 1?', 'options': ['1', '2', '3', '4'], 'answer': '3'}]
+    'quiz': [{'question': 'What  is 2 + 1?', 'options': ['1', '2', '3', '4'], 'answer': 2}]
   }
 }
 
