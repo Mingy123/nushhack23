@@ -104,6 +104,14 @@ def create_lesson():
   return lessonID
 
 
+@app.route('/get-packages')
+def get_packages():
+  return packages
+
+@app.route('/get-lessons')
+def get_lessons():
+  return lessons
+
 
 @app.route('/add-quiz', methods=['POST'])
 def add_quiz():
