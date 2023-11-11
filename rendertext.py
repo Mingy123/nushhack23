@@ -38,6 +38,6 @@ def read(filename, confidence_threshold=0.05):
         draw.rectangle([tuple(pos[0]), tuple(pos[2])], fill=color)
         # write text
         font = ImageFont.truetype('font.ttf', size=fsize)
-        draw.text(pos[0], text, font=font, fill=(255, 0, 0))
+        draw.text(pos[0], text, font=font, fill=(255-color[0], 255-color[1], 255-color[2]))
 
     return image
