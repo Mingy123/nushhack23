@@ -25,10 +25,6 @@ def read(filename, confidence_threshold=0.05):
         if conf < confidence_threshold: continue
         if not text.isascii(): continue
         c1 = image.getpixel(tuple(pos[0]))
-        c2 = image.getpixel(tuple(pos[1]))
-        c3 = image.getpixel(tuple(pos[2]))
-        c4 = image.getpixel(tuple(pos[3]))
-        color = tuple((a + b + c + d) // 3 for a, b, c, d in zip(c1, c2, c3, c4))
         colours.append(c1) # NOTE!!! im using the top left corner bcos it works better
 
     draw = ImageDraw.Draw(image)
