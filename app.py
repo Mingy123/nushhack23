@@ -1,5 +1,6 @@
 from flask import Flask, request, send_file, abort, jsonify
 import random, string, rendertext, parsevideo
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -174,6 +175,15 @@ def nicetify():
   path = './static/nicetify/' + fileID + '.' + ext
   if ext == '': path = path[:-1]
   file.save(path)
+
+  image = Image.open(path)
+  width, height = image.size
+  if width > 400:
+    height = int(height / (width / 400))
+    width = 400
+    image = image.resize((width, height))
+  image.save(path)
+
   image = rendertext.read(path)
   path = './static/nicetify/' + fileID + '_out.' + ext
   if ext == '': path = path[:-1]
