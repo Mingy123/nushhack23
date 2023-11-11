@@ -42,7 +42,7 @@ lessons = {
     'lecture': {
       'difficulty': 50,
       'tags': ['math', 'calculus'],
-      'url': 'videoID'
+      'url': '/static/lectures/division.mp4'
     },
     'quiz': [{'question': 'What  is 1 + 1?', 'options': ['1', '2', '3', '4'], 'answer': 1}]
   },
@@ -52,7 +52,7 @@ lessons = {
     'lecture': {
       'difficulty': 50,
       'tags': ['math', 'calculus'],
-      'url': 'videoID'
+      'url': '/static/lectures/division.mp4'
     },
     'quiz': [{'question': 'What  is 2 + 1?', 'options': ['1', '2', '3', '4'], 'answer': 2}]
   }
